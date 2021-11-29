@@ -1,6 +1,6 @@
 # MyReads Project
 
-This is My Reads Project Made With React.js
+This is My Reads Project with this app you can sort your own Library of book and divide it to shelves and you can move book from shelve to anthoer one this app Made With React.js and backend with node and using Udacity API
 
 ## Installation
 

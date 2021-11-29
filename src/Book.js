@@ -28,22 +28,20 @@ class Book extends React.Component {
                   Move to...
                 </option>
                 <option value="none">None</option>
-                {this.props.shelfs
-                  .filter(
-                    (shelf) =>
-                      shelf.key !==
-                      this.props.shelfs[this.props.shelfs.length - 1].key
-                  )
-                  .map((shelf) => (
-                    <option key={shelf.name} value={shelf.key}>
-                      {shelf.name}
-                    </option>
-                  ))}
+                {this.props.shelfs.map((shelf) => (
+                  <option key={shelf.name} value={shelf.key}>
+                    {shelf.name}
+                  </option>
+                ))}
               </select>
             </div>
           </div>
           <div className="book-title">{this.props.book.title}</div>
-          <div className="book-authors">{this.props.book.authors}</div>
+          <div className="book-authors">
+            {this.props.book.authors !== undefined
+              ? this.props.book.authors.join("  ")
+              : ""}
+          </div>
         </div>
       </li>
     );
