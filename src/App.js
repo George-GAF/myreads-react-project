@@ -43,7 +43,7 @@ class BooksApp extends React.Component {
     }
   };
 
-  handleClick = (book) => (e) => {
+  handleClick = (book) => async (e) => {
     let newShelf = e.target.value;
     const books = this.state.books;
     books.forEach((bo) => {
@@ -52,7 +52,7 @@ class BooksApp extends React.Component {
       }
     });
     this.setState({ books });
-    BooksAPI.update(book, newShelf);
+    await BooksAPI.update(book, newShelf);
   };
 
   backButton = async () => {
